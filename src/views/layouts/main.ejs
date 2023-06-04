@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    <%= title ?? 'Toko AC' %>
+  </title>
+
+  <%- include('header') %>
+  <%# harus di definisikan di middleware untuk ekstrak style css secara otomatis ke section ini %>
+  <%- style %>
+</head>
+
+<body>
+  <%- include('navbar') %>
+  <%- defineContent('full_view') %>
+  <div class="wrapper">
+
+    <div class="container">
+      <!-- Body akan otomatis di render tanpa harus mendefinisikan section pada ejs -->
+      <%- body %>
+    </div>
+
+    <div class="push"></div>
+  </div>
+
+  <%- include('footer') %>
+  <!-- Section yang tidak wajib dipanggil -->
+  <%- defineContent('modal') %>
+
+  <%# harus di definisikan di middleware untuk ekstrak script js secara otomatis ke section ini %>
+  <%- script %>
+</body>
+
+</html>

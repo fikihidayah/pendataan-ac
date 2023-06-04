@@ -1,0 +1,360 @@
+[{
+  "_id": {
+    "$oid": "646f8a798699d11d84c64cd2"
+  },
+  "nama": "Polytron PAC 05VH AC Split Standard 1/2 PK",
+  "kd_produk": "PAC-05VH",
+  "kategori": {
+    "$oid": "646a3a5a10d70170343ec0a0"
+  },
+  "deskripsi": "Apa Saja fitur Keren PAC-05VH ?\r\n5000 Btu/h - Bisa mendinginkan ruangan sampai 10m2.\r\nGaransi 3 Tahun Sparepart, 10 Tahun Kompressor.\r\nAuto cleaning yang dapat membersihkan evaporator secara otomatis dan mengurangi timbulnya debu dan bakteri yang tinggal didalam unit indoor AC.\r\nLeakage Detector - sistem akan mendeteksi tanda - tanda kerusakan dini pada sistem pendingin dan menghindarkan sistem dari kerusakan fatal.\r\nAuto Restart dapat secara otomatis menghidupkan kembali mesin ac setelah terjadi putus listrik atau mati lampu.",
+  "gambar": [
+    {
+      "nama": "gambar-1685119245151.jpg",
+      "path": "uploads/images/gambar-1685119245151.jpg",
+      "_id": {
+        "$oid": "6470e10d74004487b08cd7c8"
+      }
+    },
+    {
+      "nama": "gambar-1685544643657.jpg",
+      "path": "uploads/images/gambar-1685544643657.jpg",
+      "_id": {
+        "$oid": "64775ec33303ea1869e28d6c"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1685031545416"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1685584263282"
+    }
+  },
+  "__v": 1,
+  "brand": {
+    "$oid": "64775724bd643e74ae4523c4"
+  },
+  "harga": 3325000,
+  "diskon": 30,
+  "stock": 13,
+  "slug": "polytron-pac-05vf-split-setengah-pk"
+},{
+  "_id": {
+    "$oid": "6470d06343cef90721f73620"
+  },
+  "nama": "Sharp",
+  "kd_produk": "AH-A5UCY",
+  "kategori": {
+    "$oid": "646a3a5a10d70170343ec0a0"
+  },
+  "deskripsi": "Sharp AC AH-A5UCY adalah AC Dinding bertenaga 0.5HP yang dibekali berbagai fitur menarik untuk maksimalkan fungsinya. Didukung dengan kapasitas pendinginan mencapai 5000BTU, AC ini bisa jadi pilihan tepat untuk kamu yang ingin menikmati udara lebih sejuk dalam ruangan. Tertarik beli? Dapatkan harga Sharp AC AH-A5UCY yang termurah mulai dari IDR2295000 melalui iPrice sekarang juga",
+  "gambar": [
+    {
+      "nama": "gambar-1685114979577.jpg",
+      "path": "uploads/images/gambar-1685114979577.jpg",
+      "_id": {
+        "$oid": "6470d06343cef90721f73621"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1685114979602"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1685585629128"
+    }
+  },
+  "__v": 0,
+  "brand": {
+    "$oid": "6477534faf5e8218e70c21a7"
+  },
+  "diskon": 50,
+  "harga": 20000,
+  "slug": "sharp-01",
+  "stock": 10
+},{
+  "_id": {
+    "$oid": "6470d6329d3a1291c81668a6"
+  },
+  "nama": "SHARP 05",
+  "kd_produk": "SAY 1/2 PK SPLIT R32",
+  "kategori": {
+    "$oid": "646a3a5a10d70170343ec0a0"
+  },
+  "deskripsi": "FITUR :\r\n> control jetstream\r\n> control coanda gentle cool air hembusan udara lembut\r\n> auto swing louver swing otomatis naik turun\r\n> evaporator anti karat.\r\n> easy remot control with 12 hour timer sleep",
+  "gambar": [
+    {
+      "nama": "gambar-1685116466840.jpg",
+      "path": "uploads/images/gambar-1685116466840.jpg",
+      "_id": {
+        "$oid": "6470d6329d3a1291c81668a7"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1685116466858"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1685585669476"
+    }
+  },
+  "__v": 1,
+  "brand": {
+    "$oid": "6477534faf5e8218e70c21a7"
+  },
+  "diskon": 50,
+  "harga": 30000,
+  "slug": "sharp-05",
+  "stock": 2
+},{
+  "_id": {
+    "$oid": "6471be3b2529efb1445e8c6b"
+  },
+  "nama": "Daikin FTKQ25UVM4 AC Split 1PK Inverter Putih",
+  "kd_produk": "FTKQ25UVM4",
+  "kategori": {
+    "$oid": "646a3a5a10d70170343ec0a0"
+  },
+  "deskripsi": "Apa Saja fitur Keren FTKQ25UVM4 ?\r\n9000 Btu/h - Bisa mendinginkan ruangan sampai 16m2.\r\nGaransi 3 Tahun Sparepart, 3 Tahun Kompresor.\r\nMode Econo - Mode ini membatasi arus dan kekuatan maksimum konsumsi.\r\nLow Watt - Mode watt rendah memungkinkan arus berjalan maksimum dari AC harus diganti dengan sentuhan tombol.\r\nAnti-Korosi Outdoor Unit - Sirip penukar panas unit luar diproses menggunakan perawatan anti korosi khusus. \r\nSelf Diagnosis - Kode kerusakan berfungsi ditampilkan pada panel tampilan digital remote control nirkabel untuk perawatan cepat dan mudah.\r\nAuto Restart -  AC akan mengingat pengaturan mode operasi, aliran udara, suhu, dan secara otomatis kembali ke pengaturan tersebut ketika listrik menyala.",
+  "gambar": [
+    {
+      "nama": "gambar-1685175867578.jpg",
+      "path": "uploads/images/gambar-1685175867578.jpg",
+      "_id": {
+        "$oid": "6471be3b2529efb1445e8c6c"
+      }
+    },
+    {
+      "nama": "gambar-1685175895461.jpg",
+      "path": "uploads/images/gambar-1685175895461.jpg",
+      "_id": {
+        "$oid": "6471be572529efb1445e8c77"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1685175867595"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1685585730019"
+    }
+  },
+  "__v": 0,
+  "brand": {
+    "$oid": "6477531daf5e8218e70c2198"
+  },
+  "diskon": 20,
+  "harga": 5085000,
+  "slug": "daikin-ftkq25uvm4-ac-split-1pk-inverter-putih",
+  "stock": 3
+},{
+  "_id": {
+    "$oid": "6471f17d0c2bfe25d3cd441b"
+  },
+  "nama": " Gree GWC-09MOO5S AC Split 1 PK Standard",
+  "kd_produk": "GWC-09MOO5SS",
+  "kategori": {
+    "$oid": "646a3a5a10d70170343ec0a0"
+  },
+  "deskripsi": "Apa Saja fitur Keren GWC-09MOO5SS ?\r\n9000 Btu/h - Bisa mendinginkan ruangan sampai 16m2.\r\nGaransi 1 Tahun Ganti Baru, 5 Tahun Sparepart, 10 Tahun Kompressor.\r\nEasy Removal - Mempermudah untuk membongkar dan membersihkan AC.\r\nSmart Cleaner - Dapat membersihkan evaporator ac secara otomatis.\r\nMass Air Supply - Memberikan hembusan angin dengan maksimal dengan tingakt kebisingan 19 dB.",
+  "gambar": [
+    {
+      "nama": "gambar-1685188989386.jpg",
+      "path": "uploads/images/gambar-1685188989386.jpg",
+      "_id": {
+        "$oid": "6471f17d0c2bfe25d3cd441c"
+      }
+    },
+    {
+      "nama": "gambar-1685190156049.jpg",
+      "path": "uploads/images/gambar-1685190156049.jpg",
+      "_id": {
+        "$oid": "6471f1a60c2bfe25d3cd4446"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1685188989458"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1685585818239"
+    }
+  },
+  "__v": 1,
+  "brand": {
+    "$oid": "64775360af5e8218e70c21aa"
+  },
+  "diskon": 28.7,
+  "harga": 5070000,
+  "slug": "gree-gwc-09moo5s-ac-split-1-pk-standard",
+  "stock": 1
+},{
+  "_id": {
+    "$oid": "6477f368d41f917685eeba62"
+  },
+  "nama": "Gree GWC-05C3ES AC Split 1/2 PK Low Watt",
+  "kd_produk": "GWC-05C3ES",
+  "kategori": {
+    "$oid": "646a3a5a10d70170343ec0a0"
+  },
+  "deskripsi": "Apa Saja fitur Keren GWC-05C3ES ?\r\n5000 Btu/h - Bisa mendinginkan ruangan sampai 10m2.\r\nGaransi 1 Tahun Ganti Baru, 5 Tahun Sparepart, 10 Tahun Kompressor.\r\nPengingat Pintar - Berfungsi untuk selalu mengingat pengaturan anda sehingga tidak perlu mengatur ulang suhu, kecepatan kipas, jam, bahkan pada saat listrik padam.\r\nRestart Otomatis - Dapat mengatur waktu pengoperasian awal secara pintar. Saat listrik hidup kembali, unit ac ini tidak akan beroperasi bersamaan dengan perangkat lain.\r\nSelf Diagnosis - Status operasi dan kerusakan dapat terdeteksi secara otomatis dan ditampilakan di layar.\r\nEvaporator dan kondensor dilapisin goldfin dan blue fin.",
+  "gambar": [
+    {
+      "nama": "gambar-1685582696518.jpg",
+      "path": "uploads/images/gambar-1685582696518.jpg",
+      "_id": {
+        "$oid": "6477f368d41f917685eeba63"
+      }
+    },
+    {
+      "nama": "gambar-1685582741052.jpg",
+      "path": "uploads/images/gambar-1685582741052.jpg",
+      "_id": {
+        "$oid": "6477f3955b950748f8eb8244"
+      }
+    },
+    {
+      "nama": "gambar-1685582749104.jpg",
+      "path": "uploads/images/gambar-1685582749104.jpg",
+      "_id": {
+        "$oid": "6477f39d5b950748f8eb824c"
+      }
+    }
+  ],
+  "brand": {
+    "$oid": "64775360af5e8218e70c21aa"
+  },
+  "harga": 5085000,
+  "diskon": 28.6,
+  "stock": 4,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1685582696592"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1685586155387"
+    }
+  },
+  "__v": 0,
+  "slug": "gree-gwc-05c3es-ac-split-12-pk-low-watt"
+},{
+  "_id": {
+    "$oid": "6477f47d5b950748f8eb8272"
+  },
+  "nama": "Sharp AH-A9SAY AC Split 1 PK New Jetstream Series R32",
+  "kd_produk": "AH-A9SAY",
+  "kategori": {
+    "$oid": "646f1976871967dafc0d4b44"
+  },
+  "deskripsi": "Apa Saja fitur Keren AH-A9SAY ?\r\n9000 Btu/h - Bisa mendinginkan ruangan sampai 16m2.\r\nGaransi 1 Tahun Sparepart, 10 Tahun Kompresor.\r\nR32 - Refrigeran ramah lingkungan dengan nol ODP (Ozone Depletion Potential) dan lebih cepat dingin.\r\nPowerful Jetstream - Dapat mendinginkan ruangan dengan cepat dengan hembusan kuat dan langsung.\r\nCoanda Gentle Cool Air - Fitur Coanda Gentle Cool Air dapat menghembuskan aliran udara AC keatas plavon (langit-langit) sehingga dapat mencegah kondisi udara terlalu dingin.",
+  "gambar": [
+    {
+      "nama": "gambar-1685582973033.jpg",
+      "path": "uploads/images/gambar-1685582973033.jpg",
+      "_id": {
+        "$oid": "6477f47d5b950748f8eb8273"
+      }
+    },
+    {
+      "nama": "gambar-1685583002368.jpg",
+      "path": "uploads/images/gambar-1685583002368.jpg",
+      "_id": {
+        "$oid": "6477f49a5b950748f8eb8288"
+      }
+    },
+    {
+      "nama": "gambar-1685583007016.jpg",
+      "path": "uploads/images/gambar-1685583007016.jpg",
+      "_id": {
+        "$oid": "6477f49f5b950748f8eb8290"
+      }
+    }
+  ],
+  "brand": {
+    "$oid": "6477534faf5e8218e70c21a7"
+  },
+  "harga": 4095000,
+  "diskon": 28,
+  "stock": 13,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1685582973055"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1685586203188"
+    }
+  },
+  "__v": 0,
+  "slug": "sharp-ah-a9say-ac-split-1-pk-new-jetstream-series-r32"
+},{
+  "_id": {
+    "$oid": "6477f868ffc3c7f1d7aca32b"
+  },
+  "nama": "Daikin FTV60CXV14 AC Split 2,5 PK",
+  "slug": "daikin-ftv60axv14-ac-split-wall-mounted-low-watt-r-32-putih",
+  "kd_produk": "FTV60CXV14",
+  "kategori": {
+    "$oid": "6473076a060e1396d8156128"
+  },
+  "deskripsi": "Apa Saja fitur Keren FTV60CXV14 ?\r\n22000 Btu/h - Bisa mendinginkan ruangan sampai 41m2.\r\nGaransi 1 Tahun Sparepart dan 3 Tahun Kompressor.\r\nMulai Ulang Otomatis - AC akan mengingat pengaturan mode operasi, dan secara otomatis kembali ke pengaturan tersebut ketika listrik kembali menyala.\r\nMode Powerful - Fungsi ini nyaman untuk meningkatkan pendinginan kinerja dalam waktu 20 menit.\r\nR32 - Refrigeran ramah lingkungan dengan nol ODP (Ozone Depletion Potential) dan lebih cepat dingin.",
+  "gambar": [
+    {
+      "nama": "gambar-1685583976270.jpg",
+      "path": "uploads/images/gambar-1685583976270.jpg",
+      "_id": {
+        "$oid": "6477f868ffc3c7f1d7aca32c"
+      }
+    },
+    {
+      "nama": "gambar-1685584123540.jpg",
+      "path": "uploads/images/gambar-1685584123540.jpg",
+      "_id": {
+        "$oid": "6477f8fbffc3c7f1d7aca351"
+      }
+    },
+    {
+      "nama": "gambar-1685584131579.jpg",
+      "path": "uploads/images/gambar-1685584131579.jpg",
+      "_id": {
+        "$oid": "6477f903ffc3c7f1d7aca359"
+      }
+    }
+  ],
+  "brand": {
+    "$oid": "6477531daf5e8218e70c2198"
+  },
+  "harga": 13350000,
+  "diskon": 30,
+  "stock": 3,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1685583976333"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1685584131599"
+    }
+  },
+  "__v": 0
+}]

@@ -1,0 +1,48 @@
+<div class="card">
+
+  <div class="card-header">
+    Simpan Data Ketegori
+  </div>
+
+  <div class="card-body">
+    <form action="/category" method="POST">
+      <input type="hidden" name="_method" value="PUT">
+      <input type="hidden" name="_id" value="<%= data._id %>">
+      <% console.log(error) %>
+
+      <div class="mb-3">
+        <label for="nama" class="form-label">Nama Kategori</label>
+        <input type="text" class="form-control" name="nama" id="nama" value="<%= data.nama %>">
+        <% if (error?.nama) { %>
+        <small class="text-danger"><%= error.nama.msg %></small>
+        <% } %>
+      </div>
+
+      <div class="mb-3">
+        <label for="slug" class="form-label">Slug</label>
+        <input type="text" class="form-control" name="slug" id="slug" value="<%= data.slug %>">
+        <% if (error?.slug) { %>
+        <small class="text-danger"><%= error.slug.msg %></small>
+        <% } %>
+      </div>
+
+      <button type="submit" class="btn btn-success">Simpan</button>
+      <button type="button" class="btn btn-primary" onclick="window.location.href='/category'">Kembali</button>
+    </form>
+  </div>
+
+
+</div>
+
+<script src="/js/slug.js"></script>
+<script>
+  const slugInput = document.querySelector('#slug');
+  slugInput.addEventListener('keyup', function () {
+    this.value = slug(this.value, {
+      lower: true,
+      replacement: '-',
+      trim: false,
+    });
+  });
+
+</script>

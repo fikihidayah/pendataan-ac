@@ -1,0 +1,56 @@
+<% if (success) { %>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <span><%= success %></span>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<% } %>
+
+<% if (error) { %>
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <span><%= error %></span>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<% } %>
+
+<a href="/category/add" class="btn btn-success mb-3"><i class="bi bi-plus"></i> Tambah Kategori</a>
+
+<table class="table">
+  <thead class="table-light">
+    <tr>
+      <th>No</th>
+      <th>Nama Kategori</th>
+      <th>Slug</th>
+      <th>Tindakan</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% i = 1 %>
+    <% data.forEach(category => { %>
+    <tr>
+      <td><%= i++ %></td>
+      <td><%= category.nama %></td>
+      <td><%= category.slug %></td>
+      <td>
+        <a href="/category/edit/<%= category._id %>" class="badge bg-primary"><i class="bi bi-pencil"></i></a>
+        <form action="/category" method="post" class="d-inline" onsubmit="return confirm('anda yakin?')">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="hidden" name="_id" value="<%= category._id %>">
+          <button type="submit" class="badge bg-danger border-0"><i class="bi bi-trash"></i></button>
+        </form>
+      </td>
+    </tr>
+    <% }) %>
+
+    <% if (!data.length) { %>
+    <tr>
+      <td colspan="2" class="text-center">Data belum diisi</td>
+    </tr>
+    <% } %>
+
+  </tbody>
+</table>
+
+<script>
+  // Script ini akan di panggil di paling akhir pada section script
+  console.log('Hello world');
+</script>

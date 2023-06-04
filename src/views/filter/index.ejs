@@ -1,0 +1,126 @@
+<style>
+  .content-produk {
+    margin-top: 20px;
+  }
+
+  .data-produk-box {
+    padding: 5px;
+    border: 1px solid transparent;
+    transition: 0.1s;
+    text-decoration: none;
+  }
+
+  .data-produk-box:hover {
+    border-color: #ccc;
+    cursor: pointer;
+  }
+
+  .deskripsi-produk {
+    margin-top: 10px;
+  }
+
+  .nama-produk {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #555;
+  }
+
+  .harga {
+    font-size: 1.3rem;
+    color: #00c700;
+    font-weight: 700;
+  }
+
+  .harga-normal {
+    font-size: 1rem;
+    color: #777;
+    text-decoration: line-through;
+  }
+
+  .rating i {
+    cursor: pointer;
+    color: #ccc;
+    font-size: 0.8rem;
+    transition: 0.3s;
+  }
+
+  .rating i.bi.active {
+    color: #e4cd00;
+  }
+
+  .jumlah-rating {
+    font-size: 0.7rem;
+    color: #555;
+  }
+</style>
+
+<div class="produk-wrapper">
+  <%- include('./components/sidebar') %>
+
+  <section id="list-produk" class="ps-sm-4 order-sm-2 order-1">
+    <div class="image-banner">
+      <img src="/assets/banner/4.jpeg" alt="keselek" class="img-fluid">
+    </div>
+
+    <div class="content-produk row ps-2">
+      <h3 class="judul-filter ps-0">Harga <%= selectedCategory %></h3>
+
+      <% products.forEach(product => { %>
+      <a class="col-sm-6 col-md-4 col-lg-2 data-produk-box" href="/q/<%= product.slug %>">
+        <div class="text-center">
+          <img src="/<%= product.gambar[0].path %>" alt="<%= product.gambar[0].nama %>" class="img-fluid">
+        </div>
+        <div class="deskripsi-produk">
+          <h5 class="nama-produk mb-2"><%= product.nama %></h5>
+          <h3 class="harga mb-0"><%= hitungHargaSetelahDiskon(product.harga, product.diskon) %></h3>
+          <h4 class="harga-normal mb-0"><%= setRupiah(product.harga) %></h4>
+
+          <div class="rating">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <span class="jumlah-rating">(3)</span>
+          </div>
+        </div>
+      </a>
+      <% }) %>
+
+      <% if (products.length === 0) { %>
+      <div class="alert alert-danger">Produk tidak di temukan</div>
+      <% } %>
+
+    </div>
+
+  </section>
+</div>
+
+<script>
+  const rating = document.querySelectorAll('.rating');
+
+  rating.forEach((rat, index) => {
+    const stars = rat.querySelectorAll('.bi-star-fill');
+
+    stars.forEach((star, index) => {
+      star.addEventListener('mouseover', function () {
+        if (index > 0) {
+          // mengaktifkan star di belakang pada 1 produk saja
+          for (let i = 0; i <= index; i++) {
+            stars[i].classList.add('active');
+          }
+        }
+      });
+
+      star.addEventListener('mouseout', function () {
+        if (index > 0) {
+          // menonaktifkan star di belakang pada 1 produk saja
+          for (let i = 0; i <= index; i++) {
+            stars[i].classList.remove('active');
+          }
+        }
+      });
+    })
+  });
+
+</script>

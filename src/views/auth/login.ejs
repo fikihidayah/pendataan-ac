@@ -1,0 +1,53 @@
+<section id="login">
+  <div class="row mt-5">
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="mb-0 fs-5 fw-bold">Login</h4>
+        </div>
+
+        <div class="card-body">
+          <!-- messages adalah app.local.messages, khusus module express-flash, kalau connect flash tidak ada -->
+          <% if (messages['passport-error']) { %>
+          <div class="alert alert-danger" role="alert">
+            <%= messages['passport-error'] %>
+          </div>
+          <% } %>
+
+          <% if (success) { %>
+          <div class="alert alert-success">
+            <%= success %>
+          </div>
+          <% } %>
+
+          <form action="/auth/login" method="POST">
+            <%# password %>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="text" class="form-control" name="email" id="email" value="<%= old?.email %>">
+              <% if (error?.email) { %>
+              <small class="text-danger"><%= error.email.msg %></small>
+              <% } %>
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" name="password" id="password">
+              <% if (error?.password) { %>
+              <small class="text-danger"><%= error.password.msg %></small>
+              <% } %>
+            </div>
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-success"><i class="bi bi-box-arrow-right"></i> Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-8">
+      <div class="text-center">
+        <img src="/assets/login/login_prev_ui.png" alt="login vector" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</section>

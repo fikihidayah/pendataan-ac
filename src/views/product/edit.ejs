@@ -1,0 +1,295 @@
+<div class="card">
+
+  <div class="card-header">
+    Ubah Data Produk
+  </div>
+
+  <div class="card-body">
+    <% if (success) { %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <span><%= success %></span>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <% } %>
+
+    <% if (typeof error == 'string') { %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <span><%= error %></span>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <% } %>
+
+    <form action="/product/update" method="POST" enctype="multipart/form-data">
+      <input type="hidden" name="id" value="<%= product._id %>">
+
+      <div class="mb-3">
+        <label for="nama" class="form-label">Nama Produk</label>
+        <input type="text" class="form-control" name="nama" id="nama" value="<%= old?.nama ?? product.nama %>">
+        <% if (error?.nama) { %>
+        <small class="text-danger"><%= error.nama.msg %></small>
+        <% } %>
+      </div>
+
+      <div class="mb-3">
+        <label for="slug" class="form-label">Slug</label>
+        <input type="text" class="form-control" name="slug" id="slug" value="<%= old?.slug ?? product.slug %>">
+        <% if (error?.slug) { %>
+        <small class="text-danger"><%= error.slug.msg %></small>
+        <% } %>
+      </div>
+
+      <div class="mb-3">
+        <label for="kd_produk" class="form-label">Kode Produk</label>
+        <input type="text" class="form-control" name="kd_produk" id="kd_produk"
+          value="<%= old?.kd_produk ?? product.kd_produk %>">
+        <% if (error?.kd_produk) { %>
+        <small class="text-danger"><%= error.kd_produk.msg %></small>
+        <% } %>
+      </div>
+
+      <div class="mb-3">
+        <label for="deskripsi" class="form-label">Deskripsi</label>
+        <textarea name="deskripsi" id="deskripsi" class="form-control"
+          rows="5"><%= old?.deskripsi ?? product.deskripsi %></textarea>
+        <% if (error?.deskripsi) { %>
+        <small class="text-danger"><%= error.deskripsi.msg %></small>
+        <% } %>
+      </div>
+
+      <div class="mb-3">
+        <label for="kategori" class="form-label">Kategori</label>
+        <select class="form-select" name="kategori">
+          <option value="">Pilih Kategori</option>
+          <% categories.forEach(category => { %>
+          <% 
+            let kategori = '';
+            if(old && old.kategori) {
+              kategori = old.kategori;
+            }
+
+            if(product && product.kategori) {
+              kategori = product.kategori;
+            }
+          %>
+
+          <option value="<%= category._id %>" <%- category._id.toString() == kategori.toString() ? 'selected' : '' %>>
+            <%= category.nama %></option>
+          <% }) %>
+        </select>
+        <% if (error?.kategori) { %>
+        <small class="text-danger"><%= error.kategori.msg %></small>
+        <% } %>
+      </div>
+
+      <div class="mb-3">
+        <label for="brand" class="form-label">Brand</label>
+        <select class="form-select" name="brand">
+          <option value="">Pilih Brand</option>
+          <% brands.forEach(brand => { %>
+          <option value="<%= brand._id %>"
+            <%- brand._id == (old?.brand ?? product.brand?.toString()) ? 'selected' : '' %>>
+            <%= brand.nama %></option>
+          <% }) %>
+        </select>
+        <% if (error?.brand) { %>
+        <small class="text-danger"><%= error.brand.msg %></small>
+        <% } %>
+      </div>
+
+      <div class="mb-3">
+        <label for="harga" class="form-label">Harga</label>
+        <div class="input-group">
+          <span class="input-group-text">Rp.</span>
+          <input type="text" class="form-control" name="harga" id="harga" value="<%= old?.harga ?? product.harga %>">
+        </div>
+        <% if (error?.harga) { %>
+        <small class="text-danger"><%= error.harga.msg %></small>
+        <% } %>
+      </div>
+
+      <div class="mb-3">
+        <label for="diskon" class="form-label">Diskon</label>
+        <div class="input-group">
+          <span class="input-group-text">%</span>
+          <input type="text" class="form-control" name="diskon" id="diskon" value="<%= old?.diskon ?? product.diskon %>"
+            placeholder="0-99">
+        </div>
+        <% if (error?.diskon) { %>
+        <small class="text-danger"><%= error.diskon.msg %></small>
+        <% } %>
+      </div>
+
+      <div class="mb-3">
+        <label for="harga-diskon" class="form-label">Harga Setelah Diskon</label>
+        <div class="input-group">
+          <span class="input-group-text">Rp.</span>
+          <input type="text" class="form-control" name="harga-diskon" id="harga-diskon" value="0" readonly>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="stock" class="form-label">Stok</label>
+        <input type="text" class="form-control" name="stock" id="stock" value="<%= old?.stock ?? product.stock %>">
+        <% if (error?.stock) { %>
+        <small class="text-danger"><%= error.stock.msg %></small>
+        <% } %>
+      </div>
+
+      <div class="mb-3">
+        <label for="gambar" class="form-label">Gambar</label>
+        <input class="form-control" type="file" name="gambar" id="gambar">
+        <% if (error?.gambar) { %>
+        <small class="text-danger"><%= error.gambar.msg %></small>
+        <% } %>
+      </div>
+
+      <button type="submit" class="btn btn-success">Simpan</button>
+      <button type="button" class="btn btn-primary" onclick="window.location.href='/product'">Kembali</button>
+    </form>
+  </div>
+
+
+</div>
+
+<div class="card mt-3">
+
+  <div class="card-body">
+    <h3 class="text-center">Gambar Produk</h3>
+
+    <div class="row">
+      <% product.gambar.forEach(gambar => { %>
+      <div class="col-md-4">
+        <div class="text-center">
+          <img src="/<%= gambar.path %>" alt="<%= gambar.nama %>" class="img-fluid">
+        </div>
+
+        <div class="d-flex justify-content-center mt-3">
+          <button class="btn btn-primary w-25 me-2 pb-2 show-gambar" data-bs-toggle="modal"
+            data-bs-target="#gambarModal" type="button" data-id="<%= gambar._id %>">Ubah</button>
+          <form action="/product/gambar" method="post" class="d-inline w-25" onsubmit="return confirm('anda yakin?')">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="_id" value="<%= gambar._id %>">
+            <button type="submit" class="btn btn-danger pb-2 w-100">Hapus</button>
+          </form>
+        </div>
+      </div>
+      <% }) %>
+
+    </div>
+  </div>
+
+</div>
+
+<%- contentFor('modal') %>
+<%- include('./modal-edit-gambar') %>
+
+<script src="/js/slug.js"></script>
+
+<script>
+  const showGambarBtn = document.querySelectorAll('.show-gambar');
+
+  showGambarBtn.forEach((value, key) => {
+    value.addEventListener('click', function (e) {
+      const id = this.dataset.id;
+      const data = { id };
+
+
+      fetch('/product/gambar', {
+        method: 'POST',
+        headers: {
+          "Content-Type": 'application/json',
+          accept: "application/json",
+        },
+        body: JSON.stringify(data),
+      }).then((response) => response.json())
+        .then((response) => {
+          // Aksi nya
+          if (response) {
+            const form = document.getElementById('ubah-gambar-form');
+            form.querySelector('#id').value = response._id;
+            form.parentElement.querySelector('#gambar-ubah').setAttribute('src', '/' + response.path);
+          }
+        });
+    });
+  });
+
+  ubahSource('#ubah-gambar-form #gambar', '#gambar-ubah');
+
+  const ubahGambarFormElement = document.getElementById('ubah-gambar-form');
+  const gambarElement = document.querySelector('#ubah-gambar-form #gambar');
+  const idElement = document.querySelector('#ubah-gambar-form #id');
+  const ubahGambarBtnElement = document.getElementById('ubah-gambar-btn');
+  const gambarModalElement = document.getElementById('gambarModal');
+  const successMessageElement = document.getElementById('success-message');
+  const gambarUbahElement = document.getElementById('gambar-ubah');
+
+  ubahGambarFormElement.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const spinner = ubahGambarBtnElement.querySelector('.spinner-border');
+    spinner.style.display = '';
+    ubahGambarBtnElement.setAttribute('disabled', 'disabled');
+
+    fetch('/product/gambar/update', {
+      method: 'POST',
+      body: new FormData(this),
+    }).then((response) => {
+      if (response.status == 403) {
+        spinner.style.display = 'none';
+        ubahGambarBtnElement.removeAttribute('disabled');
+        return Promise.reject(response.json());
+      }
+
+      return response.json();
+    })
+      .then(response => {
+        successMessageElement.textContent = 'Berhasil mengubah gambar';
+        successMessageElement.parentElement.style.display = '';
+        gambarElement.parentElement.querySelector('small').textContent = ''
+        setTimeout(() => window.location.href = '', 1000);
+
+      }).catch(async (err) => {
+        const error = await err;
+        gambarElement.parentElement.querySelector('small').textContent = error.gambar.msg;
+      });
+
+  });
+
+  gambarModalElement.addEventListener('hide.bs.modal', function (e) {
+    gambarElement.parentElement.querySelector('small').textContent = '';
+    idElement.value = '';
+  });
+
+  const hargaElement = document.getElementById('harga');
+  const diskonElement = document.getElementById('diskon');
+  const hargaDiskonElement = document.getElementById('harga-diskon');
+
+  const hitungHargaSetelahDiskon = (harga, diskon) => {
+    let total = 0;
+    const totalDiskon = Number(harga) * (diskon / 100);
+    total = Number(harga) - totalDiskon;
+    return total;
+  }
+
+  const hasil = hitungHargaSetelahDiskon(hargaElement.value, diskonElement.value);
+  hargaDiskonElement.value = hasil;
+
+  hargaElement.addEventListener('keyup', function () {
+    const hasil = hitungHargaSetelahDiskon(this.value, diskonElement.value);
+    hargaDiskonElement.value = hasil;
+  });
+
+  diskonElement.addEventListener('keyup', function () {
+    const hasil = hitungHargaSetelahDiskon(hargaElement.value, this.value);
+    hargaDiskonElement.value = hasil;
+  });
+
+  const slugInput = document.querySelector('#slug');
+  slugInput.addEventListener('keyup', function () {
+    this.value = slug(this.value, {
+      lower: true,
+      replacement: '-',
+      trim: false,
+    });
+  });
+
+</script>

@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg bg-success navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Toko AC</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link <%= navSet == 'Beranda' ? 'active' : '' %>" aria-current="page" href="/">Home</a>
+        </li>
+
+        <% if (isLogin) { %>
+        <li class="nav-item">
+          <a class="nav-link <%= navSet == 'Produk' ? 'active' : '' %>" href="/product">Produk</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <%= navSet == 'Kategori' ? 'active' : '' %>" href="/category">Kategori</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link <%= navSet == 'Brand' ? 'active' : '' %>" href="/brand">Brand</a>
+        </li>
+        <% } %>
+      </ul>
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <% if (!isLogin) { %>
+          <a href="/auth/login" class="nav-link <%= navSet == 'Login' ? 'active' : '' %>"><i
+              class="bi bi-box-arrow-in-right"></i> Login</a>
+          <% }else { %>
+        <li class="nav-item">
+          <a class="nav-link <%= navSet == 'Dashboard' ? 'active' : '' %>" aria-current="page" href="/dashboard"><i
+              class="bi bi-speedometer"></i> Dashboard</a>
+        </li>
+        <form action="/logout" method="post" class="d-inline" onsubmit="return confirm('Anda yakin ingin logout?')">
+          <button type="submit" class="border-0 bg-transparent nav-link"><i class="bi bi-box-arrow-in-left"></i>
+            Logout</button>
+        </form>
+        <% } %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

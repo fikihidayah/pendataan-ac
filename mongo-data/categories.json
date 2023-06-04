@@ -1,0 +1,71 @@
+[{
+  "_id": {
+    "$oid": "646a3a5a10d70170343ec0a0"
+  },
+  "nama": "1/2 PK",
+  "__v": 0,
+  "slug": "ac-setengah-pk"
+},{
+  "_id": {
+    "$oid": "646b06bfd29039fc98a83c78"
+  },
+  "nama": "3/4 PK",
+  "__v": 0,
+  "slug": "ac-tiga-perempat-pk"
+},{
+  "_id": {
+    "$oid": "646f1976871967dafc0d4b44"
+  },
+  "nama": "1 PK",
+  "__v": 0,
+  "slug": "ac-satu-pk"
+},{
+  "_id": {
+    "$oid": "6473075c060e1396d8156122"
+  },
+  "nama": "1,5 PK",
+  "__v": 0,
+  "slug": "ac-satu-setengah-pk"
+},{
+  "_id": {
+    "$oid": "64730761060e1396d8156125"
+  },
+  "nama": "2 PK",
+  "__v": 0,
+  "slug": "ac-dua-pk"
+},{
+  "_id": {
+    "$oid": "6473076a060e1396d8156128"
+  },
+  "nama": "2,5 PK",
+  "__v": 0,
+  "slug": "ac-dua-setengah-pk"
+},{
+  "_id": {
+    "$oid": "64730770060e1396d815612b"
+  },
+  "nama": "Inverter",
+  "__v": 0,
+  "slug": "ac-inverter"
+},{
+  "_id": {
+    "$oid": "64730776060e1396d815612e"
+  },
+  "nama": "Plasma",
+  "__v": 0,
+  "slug": "ac-plasma"
+},{
+  "_id": {
+    "$oid": "6473077b060e1396d8156131"
+  },
+  "nama": "Standard",
+  "__v": 0,
+  "slug": "ac-standard"
+},{
+  "_id": {
+    "$oid": "64730781060e1396d8156134"
+  },
+  "nama": "Low Watt",
+  "__v": 0,
+  "slug": "ac-low-wat"
+}]

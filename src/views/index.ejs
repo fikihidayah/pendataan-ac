@@ -1,0 +1,188 @@
+<style>
+  .angka-counter,
+  .deskripsi-angka {
+    text-align: center;
+  }
+
+  .angka-counter {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #555;
+  }
+
+  .deskripsi-angka {
+    font-weight: bold;
+    color: #666;
+  }
+
+  .tipe {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+
+  .ukuran {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  #brand a.card {
+    color: #333;
+    text-decoration: none;
+  }
+
+  #brand a.card:hover {
+    color: #0003ad;
+  }
+</style>
+
+<%- contentFor('full_view') %>
+<div id="carouselExampleControls" class="carousel slide position-relative" style="z-index: 2;" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/assets/banner/1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/assets/banner/2.jpeg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/assets/banner/3.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div class="bg-light py-2 position-relative border-bottom" style="z-index: 2;">
+  <p class="text-center mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis eos porro distinctio, fuga
+    alias
+    laudantium ipsa id sequi ducimus consequuntur.</p>
+</div>
+
+
+<!-- Jika ada sebuah section sebelum body maka body harus di definisikan dlu -->
+<%- contentFor('body') %>
+<!-- <div class="p-5 mb-4 bg-light rounded-3 mt-4">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold">Selamat Datang di Trisum AC E-Commerce</h1>
+    <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous
+      versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
+    <button class="btn btn-primary btn-lg" type="button" onclick="window.location.href='/product'">Pesan
+      Sekarang</button>
+  </div>
+</div> -->
+
+<section class="d-flex justify-content-center" id="jumlah-data">
+  <div class="card shadow-sm border-0 col-sm-9">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="angka-counter">
+            <span id="angka-counter-visitor"></span>+
+          </div>
+          <div class="deskripsi-angka">Visitor</div>
+        </div>
+        <div class="col-md-4">
+          <div class="angka-counter">
+            <span id="angka-counter-member"></span>+
+          </div>
+          <div class="deskripsi-angka">Member</div>
+        </div>
+        <div class="col-md-4">
+          <div class="angka-counter">
+            <span id="angka-counter-ac"></span>+
+          </div>
+          <div class="deskripsi-angka">Ac Terjual</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="brand" class="d-flex justify-content-center">
+
+  <div class="row mt-5 col-sm-9">
+    <h4 class="text-center mb-3">BERBAGAI BRAND PILIHAN UNTUKMU</h4>
+    <div class="col-md-3 mb-3">
+      <a href="/">
+        <img src="/assets/brand/daikin.jpg" alt="daikin" class="img-thumbnail w-100">
+      </a>
+    </div>
+    <div class="col-md-3 mb-3">
+      <a href="/">
+        <img src="/assets/brand/lg.jpg" alt="daikin" class="img-thumbnail w-100">
+      </a>
+    </div>
+    <div class="col-md-3 mb-3">
+      <a href="/">
+        <img src="/assets/brand/midea.jpg" alt="daikin" class="img-thumbnail w-100">
+      </a>
+    </div>
+    <div class="col-md-3 mb-3">
+      <a href="/">
+        <img src="/assets/brand/mitsubishi.jpg" alt="daikin" class="img-thumbnail w-100">
+      </a>
+    </div>
+    <div class="col-md-3 mb-3">
+      <a href="/">
+        <img src="/assets/brand/gree.jpg" alt="daikin" class="img-thumbnail w-100">
+      </a>
+    </div>
+    <div class="col-md-3 mb-3">
+      <a href="/">
+        <img src="/assets/brand/changhong.jpg" alt="daikin" class="img-thumbnail w-100">
+      </a>
+    </div>
+    <div class="col-md-3 mb-3">
+      <a href="/">
+        <img src="/assets/brand/panasonic.jpg" alt="daikin" class="img-thumbnail w-100">
+      </a>
+    </div>
+    <div class="col-md-3 mb-3">
+      <a href="/">
+        <img src="/assets/brand/sharp.jpg" alt="daikin" class="img-thumbnail w-100">
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="brand" class="d-flex justify-content-center">
+
+  <div class="row mt-5 justify-content-center col-sm-11">
+    <h4 class="text-center mb-3">PILIH TIPE AC SESUAI KEBUTUHANMU</h4>
+
+    <% categories.forEach(category => { %>
+    <div class="col-md-2 mb-3">
+      <a href="/filter?category=<%= encodeURI(category.slug) %>" class="card bg-warning border-dark">
+        <div class="card-body text-center">
+          <p class="tipe">AC Split</p>
+          <h4 class="ukuran"><%= category.nama %></h4>
+        </div>
+      </a>
+    </div>
+    <% }) %>
+
+
+  </div>
+
+</section>
+
+
+<script src="/js/countUp.umd.js"></script>
+<script>
+  // fitur untuk animasi angka naik ke angka ditentukan
+  window.onload = function () {
+    const countVisitor = new countUp.CountUp('angka-counter-visitor', 1_320_002, { duration: 3, separator: '.' });
+    countVisitor.start();
+
+    const countMember = new countUp.CountUp('angka-counter-member', 10_104, { duration: 2, separator: '.' });
+    countMember.start();
+
+    const countAc = new countUp.CountUp('angka-counter-ac', 9_123, { duration: 1.4, separator: '.' });
+    countAc.start();
+  }
+</script>

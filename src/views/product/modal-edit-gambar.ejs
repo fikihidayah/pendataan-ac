@@ -1,0 +1,39 @@
+<div class="modal fade" id="gambarModal" tabindex="-1" aria-labelledby="gambarModalLabel" aria-hidden="true"
+  style="z-index: 9999;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="gambarModalLabel">Ubah Gambar</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="display: none;">
+          <span id="success-message"></span>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+
+        <div class="text-center">
+          <img src="" alt="" class="w-50" id="gambar-ubah"> <br>
+        </div>
+        <hr>
+        <form action="/product/ubah-gambar" method="post" id="ubah-gambar-form" enctype="multipart/form-data">
+          <input type="hidden" name="id" id="id" value="">
+          <div class="mb-3">
+            <label for="gambar" class="form-label">Gambar</label>
+            <input class="form-control" type="file" name="gambar" id="gambar">
+            <small class="text-danger"></small>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        <button type="submit" form="ubah-gambar-form" id="ubah-gambar-btn" class="btn btn-primary">
+          <div class="spinner-border spinner-border-sm text-light" role="status" style="display: none;">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          <span>Ubah</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

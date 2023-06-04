@@ -1,0 +1,7 @@
+{
+  "html.format.templating": true,
+  "files.exclude": {
+    "node_modules": true
+  },
+  "editor.bracketPairColorization.enabled": false,
+}

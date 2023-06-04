@@ -1,0 +1,73 @@
+[{
+  "_id": {
+    "$oid": "6477531daf5e8218e70c2198"
+  },
+  "nama": "Daikin",
+  "logo": "uploads/logo/daikin.jpg",
+  "slug": "daikin",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6477533aaf5e8218e70c21a0"
+  },
+  "nama": "LG",
+  "logo": "uploads/logo/lg.jpg",
+  "slug": "lg-lg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6477534faf5e8218e70c21a7"
+  },
+  "nama": "Sharp",
+  "logo": "uploads/logo/sharp.jpg",
+  "slug": "sharp",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64775360af5e8218e70c21aa"
+  },
+  "nama": "Gree",
+  "logo": "uploads/logo/gree.jpg",
+  "slug": "gree",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6477536faf5e8218e70c21ad"
+  },
+  "nama": "Changhong",
+  "logo": "uploads/logo/changhong.jpg",
+  "slug": "changhong",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6477537daf5e8218e70c21b0"
+  },
+  "nama": "Midea",
+  "logo": "uploads/logo/midea.jpg",
+  "slug": "midea",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64775398af5e8218e70c21b3"
+  },
+  "nama": "Mitsubishi",
+  "logo": "uploads/logo/mitsubishi.jpg",
+  "slug": "mitsubishi",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "647753dd34b0d8266f929dd6"
+  },
+  "nama": "Panasonic",
+  "logo": "uploads/logo/panasonic.jpg",
+  "slug": "panasoninc",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "64775724bd643e74ae4523c4"
+  },
+  "nama": "Polytron",
+  "logo": "uploads/logo/polytron.jpg",
+  "slug": "polytron",
+  "__v": 0
+}]
