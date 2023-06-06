@@ -1,5 +1,6 @@
 import express from "express";
 import { Category } from "./../models/Category.js";
+import { Brand } from "./../models/Brand.js";
 
 export default class Home {
   /**
@@ -12,6 +13,7 @@ export default class Home {
       title: "Beranda",
       navSet: "Beranda",
       categories: await Category.find(),
+      brands: await Brand.find(),
       // layout: "layouts/main", // gak perlu di set lagi karena sudah di set default
     });
   }

@@ -12,6 +12,7 @@ import ErrorController from "./controllers/error.controller.js";
 import useragent from "express-useragent";
 import passport from "passport";
 import initPassport from "./library/passport.js";
+import MongoStore from "connect-mongo";
 
 /**
  * Menjalankan semua fungsi dasar
@@ -19,7 +20,6 @@ import initPassport from "./library/passport.js";
  */
 function run() {
   const app = express();
-
   // inisialisasi passport.js
   initPassport(passport);
   app.set("views", __dirname + "/src/views"); // set views folder
@@ -47,12 +47,19 @@ function run() {
   app.use(
     session({
       cookie: {
-        maxAge: 1000 * 60 * 60 * 24, // 1 hari
+        maxAge: 1000 * 60 * 60 * 24 * 14, // 14 days, match with mongostore options, on miliseconds
       },
       name: "X-AC-SESSION",
       secret: "gasmajuterus",
       resave: true,
       saveUninitialized: false,
+      // untuk session nya bisa bertahan saat server di restart maka gunakan database sebagai driver untuk penyimpanan session nya, atau bisa pilih strategy lain untuk penyimpanan session, defaultnya memory, kalau memory server di restart maka akan hilang data session nya
+      store: MongoStore.create({
+        mongoUrl: "mongodb://localhost:27017",
+        dbName: "ac",
+        collectionName: "sessions",
+        // ttl: 14 * 24 * 60 * 60, // = 14 days. Default in seconds
+      }),
     })
   );
   app.use(flash());

@@ -21,12 +21,12 @@ export default function product(app, router) {
 
   // agar storage nya digunakan saat upload file via middleware
   // Goalsnya adalah validasi dulu baru upload file
-  router.post("/", gambarUpload.single("gambar"), addProduct, ProductController.create);
+  router.post("/", gambarUpload.single("gambar"), ProductController.setWa, addProduct, ProductController.create);
 
   router.get("/edit/:id", ProductController.edit);
 
   // multer tidak support menggunakan method PUT, karena di jalankan sebagai multipart, jika di override maka akan tetap menggunakan POST
-  router.post("/update", gambarUpload.single("gambar"), editProduct, ProductController.update);
+  router.post("/update", gambarUpload.single("gambar"), ProductController.setWa, editProduct, ProductController.update);
 
   router.post("/gambar", ProductController.getGambar);
 

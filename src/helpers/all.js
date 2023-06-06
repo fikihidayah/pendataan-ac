@@ -1,4 +1,5 @@
 import express from "express";
+import _ from "lodash";
 
 /**
  * Helper yang dapat di gunakan pada view ejs, bahkan di mana saja
@@ -28,12 +29,23 @@ export default function all(app) {
     }
     return result;
   };
-  // Setting flash message
+  app.locals._ = _;
+
+  // Setting flash message dan yang membutuhkan request dan response
   app.use((req, res, next) => {
     res.locals.error = req.flash("error")[0];
     res.locals.success = req.flash("success")[0];
     res.locals.old = req.flash("old")[0];
     res.locals.isLogin = req.isAuthenticated();
+    res.locals.fullUrl = () => {
+      const protocol = req.protocol;
+      const host = req.hostname;
+      const url = req.originalUrl;
+      const port = process.env.PORT;
+
+      const fullUrl = `${protocol}://${host}:${port}${url}`;
+      return fullUrl;
+    };
     next();
   });
 }

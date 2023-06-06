@@ -41,6 +41,10 @@ const produkSchema = new Schema(
       min: 0,
     },
     stock: Number,
+    whatsapp: {
+      type: Number,
+      maxLength: 20,
+    },
   },
   { timestamps: true }
 );

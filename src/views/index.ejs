@@ -107,46 +107,14 @@
 
   <div class="row mt-5 col-sm-9">
     <h4 class="text-center mb-3">BERBAGAI BRAND PILIHAN UNTUKMU</h4>
+
+    <% brands.forEach(brand => { %>
     <div class="col-md-3 mb-3">
-      <a href="/">
-        <img src="/assets/brand/daikin.jpg" alt="daikin" class="img-thumbnail w-100">
+      <a href="/filter?brand=<%= encodeURI(brand.slug) %>">
+        <img src="/<%= brand.logo %>" alt="<%= brand.nama %>" class="img-thumbnail w-100">
       </a>
     </div>
-    <div class="col-md-3 mb-3">
-      <a href="/">
-        <img src="/assets/brand/lg.jpg" alt="daikin" class="img-thumbnail w-100">
-      </a>
-    </div>
-    <div class="col-md-3 mb-3">
-      <a href="/">
-        <img src="/assets/brand/midea.jpg" alt="daikin" class="img-thumbnail w-100">
-      </a>
-    </div>
-    <div class="col-md-3 mb-3">
-      <a href="/">
-        <img src="/assets/brand/mitsubishi.jpg" alt="daikin" class="img-thumbnail w-100">
-      </a>
-    </div>
-    <div class="col-md-3 mb-3">
-      <a href="/">
-        <img src="/assets/brand/gree.jpg" alt="daikin" class="img-thumbnail w-100">
-      </a>
-    </div>
-    <div class="col-md-3 mb-3">
-      <a href="/">
-        <img src="/assets/brand/changhong.jpg" alt="daikin" class="img-thumbnail w-100">
-      </a>
-    </div>
-    <div class="col-md-3 mb-3">
-      <a href="/">
-        <img src="/assets/brand/panasonic.jpg" alt="daikin" class="img-thumbnail w-100">
-      </a>
-    </div>
-    <div class="col-md-3 mb-3">
-      <a href="/">
-        <img src="/assets/brand/sharp.jpg" alt="daikin" class="img-thumbnail w-100">
-      </a>
-    </div>
+    <% }) %>
   </div>
 </section>
 

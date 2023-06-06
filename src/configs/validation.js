@@ -11,6 +11,7 @@ const addProduct = [
   body("brand", "Brand harus diisi").notEmpty(),
   body("harga", "Harga harus diisi").notEmpty().isInt().withMessage("Harus angka"),
   body("diskon", "Diskon harus diisi").notEmpty().isFloat({ min: 0, max: 99 }).withMessage("Angka diskon minimal 0 maksimal 99"),
+  body("whatsapp", "Whatsapp harus diisi").notEmpty().isMobilePhone("id-ID").withMessage("Harus nomor wa yang benar"),
   body("stock", "Stock harus diisi").notEmpty().isInt({ min: 0 }).withMessage("Harus angka, minimal 0"),
   body("gambar").uploaded().formated().fileSize(),
 ];
@@ -23,6 +24,7 @@ const editProduct = [
   body("brand", "Brand harus diisi").notEmpty(),
   body("harga", "Harga harus diisi").notEmpty().isInt().withMessage("Harus angka"),
   body("diskon", "Diskon harus diisi").notEmpty().isFloat({ min: 0, max: 99 }).withMessage("Angka diskon minimal 0 maksimal 99"),
+  body("whatsapp", "Whatsapp harus diisi").notEmpty().isMobilePhone("id-ID").withMessage("Harus nomor wa yang benar"),
   body("stock", "Stock harus diisi").notEmpty().isInt({ min: 0 }).withMessage("Harus angka, minimal 0"),
   body("gambar").formated().fileSize(),
 ];

@@ -3,5 +3,6 @@
     "$oid": "647b10feaa19ef63b564118a"
   },
   "email": "admin@admin.com",
-  "password": "$2b$10$h9VRhLM5duICSy2chwJKXOiWmXqCqBf8qjzsG7eh.c/C13dF28K7O"
+  "password": "$2b$10$h9VRhLM5duICSy2chwJKXOiWmXqCqBf8qjzsG7eh.c/C13dF28K7O",
+  "name": "Admininstator"
 }]

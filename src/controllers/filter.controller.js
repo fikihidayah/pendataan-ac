@@ -3,6 +3,7 @@ import { validationResult, matchedData } from "express-validator";
 import express from "express";
 import query from "querystring";
 import { Product } from "../models/Product.js";
+import { Brand } from "../models/Brand.js";
 
 class FilterController {
   /**
@@ -13,22 +14,35 @@ class FilterController {
    */
   static async index(req, res, next) {
     try {
-      const slug = query.escape(req.query.category);
+      const slug = query.escape(req.query.category ?? req.query.brand);
+      const type = req.query.category ? "category" : "brand";
       const category = await Category.where("slug", slug).findOne();
-      const products = await Product.find({ kategori: category._id });
-      const categories = await Category.find();
+      const brand = await Brand.where("slug", slug).findOne();
+      let products = {};
+      try {
+        products = await Product.find({ kategori: category._id });
+      } catch (e) {
+        products = await Product.find({ brand: brand._id });
+      }
 
-      if (req.query.category) {
+      const brands = await Brand.find();
+      const categories = await Category.find();
+      const title = category?.nama ?? brand?.nama;
+
+      if (req.query.category || req.query.brand) {
         return res.render("filter/index", {
-          title: "Pencarian " + category.nama,
+          title: "Pencarian " + title,
           products,
           categories,
-          selectedCategory: category.nama,
+          brands,
+          selectedCategory: category?.nama,
+          selectedBrand: brand?.nama,
+          type,
         });
       }
       next(); // to not found
     } catch (error) {
-      next(); // to not found
+      next(error); // to not found
     }
   }
 

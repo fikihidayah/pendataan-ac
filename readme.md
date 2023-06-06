@@ -1,7 +1,13 @@
 # Aplikasi Sistem E-Commerce Penjualan AC
 
 ## Ringkasan
-Aplikasi Penjualan AC berbasis E-Commerce memiliki fitur...
+Aplikasi Penjualan AC berbasis E-Commerce yang sangat sederhana.
+Fitur nya:
+1. Login dan Logout Admin, autentikasi dan autorisasi dengan passport.js, strategy yang digunakan adalah local strategy dengan penyimanan session nya dengan mongoDB
+2. CRUD Menu Produk, ada fitur ajax saat upload file, memiliki relasi dengan ke2 tabel, tipe relasi nya berbeda yaitu dengan embeded document(gambar) dan reference document(kategori dan brand)
+3. CRUD Menu Kategori
+4. CRUD Menu Brand
+5. Menu utama, yang bisa di akses user manapun, Bisa filter ac berdasarkan brand dan Kategori AC Split, selanjutnya user bisa memesan ac dengan nomor wa yang sudah di link kan
 
 Teknologi pada aplikasi ini menggunakan :
 1. **MongoDB** sebagai **Database**
@@ -10,7 +16,7 @@ Teknologi pada aplikasi ini menggunakan :
 4. **NodeJS** Sebagai **Runtime**
 
 Node Module external yang di gunakan :
-1. **connect-flash** membuat flash data express
+1. **express-flash** membuat flash data express
 2. **cookie-parser** membuat cookie pada session
 3. **ejs** template engine
 4. **express** framework backend nodeJS
@@ -20,6 +26,14 @@ Node Module external yang di gunakan :
 8. **method-override** mengoverride/menimpa method request saat submit form
 9. **mongoose** ODM/ORM database mongoDB, mempermudah query mongoDB
 10. **multer** mengupload file, middleware di jalankan di express agar memparsing form bertipa multipart/form data
+11. **lodash** manipulasi tipe data apapun dengan mudah
+12. **dotenv** membuat kredential dengan .env file
+13. **passport** mempermudah saat proses pembuatan fitur autentikasi dan autorisasi
+14. **passport-local** stategi menyimpan informasi login dengan local server
+15. **slug** mempermudah pembuatan slug
+16. **express-useragent** mempermudah mendapatkan informasi client
+17. **connect-mongo** menyimpan informasi session di mongodb, agar ketika server di restart session nya gk hilang, default session di simpan di memory
+18. **bcrypt** mengenkripsi tulisan password
 
 
 ## Skema Database
@@ -27,31 +41,79 @@ Rencana mau buat 1 tabel saja, tetapi saya ingin mengimplementasikan relasi yang
 
 ### Berikut Skemanya
 ```javascript
-// produk
+// Product.js
+// productSchema
 {
-    nama: String,
-    kd_produk: string,
-    n_kategori:string,
-    deskripsi: LongString,
-    gambar: Any
-  }
-{
-  nama: 'Panasonic',
-  kd_produk: 'acb_123',
-  kategori: 'Reference atau relasi ke collection kategori',
-  deskripsi: 'ac ini dingin',
-  gambar: [
-    {
-      nama: 'gambar.jpg',
-      path: 'to/1212.jpg'
-    },
-    {
-      nama: 'gambar.jpg',
-      path: 'to/1212.jpg'
-    },
-  ]
+  nama: {
+    type: String,
+    index: true,
+    maxLength: 100,
+  },
+  slug: {
+    type: String,
+    maxLength: 300,
+  },
+  kd_produk: {
+    type: String,
+    unique: true, // set unique
+  },
+    kategori: {
+    type: ObjectId,
+    ref: "Category",
+  },
+    deskripsi: String,
+  gambar: [gambarSchema],
+  brand: {
+    type: ObjectId,
+    ref: "Brand",
+  },
+    harga: Number,
+  diskon: {
+    type: Number,
+    max: 100,
+    min: 0,
+  },
+    stock: Number,
+  whatsapp: {
+    type: Number,
+    maxLength: 20,
+  },
 }
 
-// Kategori
-{ nama: String }
+// gambarSchema
+{
+  nama: {
+    type: String,
+    maxLength: 100,
+  },
+  path: String,
+}
+
+// Category.js
+// categorySchema
+{
+  nama: String,
+  slug: String,
+}
+
+// Brand.js
+// brandSchema
+{
+  nama: {
+    type: String,
+    maxLength: 100,
+    trim: true,
+  },
+  logo: String,
+  slug: {
+    type: String,
+    maxLength: 300,
+  },
+}
+```
+
+## Kredential Login
+```
+email: admin@admin.com
+password: password
 ```

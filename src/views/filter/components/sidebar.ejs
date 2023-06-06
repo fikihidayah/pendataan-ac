@@ -71,10 +71,10 @@
   <ul class="list-unstyled ps-0">
     <li class="mb-1">
       <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0" data-bs-toggle="collapse"
-        data-bs-target="#home-collapse" aria-expanded="true">
+        data-bs-target="#home-collapse" aria-expanded="<%= type == 'category' ? 'true' : 'false' %>">
         Ac Split
       </button>
-      <div class="collapse show" id="home-collapse">
+      <div class="collapse <%= type == 'category' ? 'show' : '' %>" id="home-collapse">
         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
           <% categories.forEach(category => { %>
           <li><a href="/filter?category=<%= encodeURI(category.slug) %>"
@@ -85,16 +85,17 @@
       </div>
     </li>
     <li class="mb-1">
-      <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-        data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-        Dashboard
+      <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0" data-bs-toggle="collapse"
+        data-bs-target="#dashboard-collapse" aria-expanded="<%= type == 'brand' ? 'true' : 'false' %>">
+        Merek
       </button>
-      <div class="collapse" id="dashboard-collapse">
+      <div class="collapse <%= type == 'brand' ? 'show' : '' %>" id="dashboard-collapse">
         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-          <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
-          <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Weekly</a></li>
-          <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Monthly</a></li>
-          <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
+          <% brands.forEach(brand => { %>
+          <li><a href="/filter?brand=<%= encodeURI(brand.slug) %>"
+              class="link-dark d-inline-flex text-decoration-none rounded <%- selectedBrand == brand.nama ? 'active' : '' %>"><%= brand.nama %></a>
+          </li>
+          <% }) %>
         </ul>
       </div>
     </li>

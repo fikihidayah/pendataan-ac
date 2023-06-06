@@ -135,6 +135,25 @@
         <% } %>
       </div>
 
+      <% 
+        // coba mainkan lodash
+        let wa = old?.whatsapp ?? product.whatsapp;
+        if(_.startsWith(wa, '62')) {
+          wa = _.trimStart(wa, '62');
+        }
+      %>
+
+      <div class="mb-3">
+        <label for="whatsapp" class="form-label">No.Whatsapp</label>
+        <div class="input-group">
+          <span class="input-group-text">+62</span>
+          <input type="number" class="form-control" name="whatsapp" id="whatsapp" value="<%= wa %>">
+        </div>
+        <% if(error?.whatsapp) { %>
+        <small class="text-danger"><%= error.whatsapp.msg %></small>
+        <% } %>
+      </div>
+
       <div class="mb-3">
         <label for="gambar" class="form-label">Gambar</label>
         <input class="form-control" type="file" name="gambar" id="gambar">

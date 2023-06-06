@@ -131,7 +131,19 @@
           <h5 class="mt-2">Deskripsi Produk</h5>
           <p><%- product.deskripsi %></p>
 
-          <button type="button" class="btn btn-success" onclick="window.open('https:/\/wa.me/62', '_blank')"><i
+          <% 
+            let waLink = product.whatsapp;
+            waLink  = "Saya tertarik dengan produk anda\n";
+            waLink += `Nama Produk : ${product.nama}\n`;
+            waLink += `Merek : ${product.brand.nama}\n`;
+            waLink += `Kode Produk : ${product.kd_produk}\n`;
+            waLink += `Jumlah : 1\n`;
+            waLink += `Harga : ${hitungHargaSetelahDiskon(product.harga, product.diskon)}\n\n`;
+            waLink +=  fullUrl();
+            waLink = encodeURI(`https://wa.me/${product.whatsapp}?text=${waLink}`);
+          %>
+
+          <button type="button" class="btn btn-success" onclick="window.open('<%= waLink %>', '_blank')"><i
               class="bi bi-whatsapp"></i> Pesan lewat WA</button>
 
 

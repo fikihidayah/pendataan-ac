@@ -25,6 +25,17 @@ class ProductController {
   }
 
   /**
+   * Middleware menambahkan 62 pada awal field nomor whatsapp
+   * @param {express.Request} req
+   * @param {express.Response} res
+   * @param {express.NextFunction} next
+   */
+  static setWa(req, res, next) {
+    req.body.whatsapp = "62" + req.body.whatsapp;
+    next();
+  }
+
+  /**
    * Halaman tambah produk
    * @param {express.Request} req
    * @param {express.Response} res
@@ -66,6 +77,7 @@ class ProductController {
         harga: rightInput.harga,
         diskon: rightInput.diskon,
         stock: rightInput.stock,
+        whatsapp: rightInput.whatsapp,
         deskripsi: rightInput.deskripsi,
         gambar: [
           {
@@ -125,6 +137,7 @@ class ProductController {
       harga: rightInput.harga,
       diskon: rightInput.diskon,
       stock: rightInput.stock,
+      whatsapp: rightInput.whatsapp,
       deskripsi: rightInput.deskripsi,
     };
 
