@@ -35,9 +35,19 @@ Node Module external yang di gunakan :
 17. **connect-mongo** menyimpan informasi session di mongodb, agar ketika server di restart session nya gk hilang, default session di simpan di memory
 18. **bcrypt** mengenkripsi tulisan password
 
+## Cara Install
+
+Install dependency node
+```
+npm install
+```
+Selanjutnya import data yang ada di folder `mongo-data` ke mongo db, lihat dokumentasi : https://www.mongodb.com/compatibility/json-to-mongodb
+
+install `nodemon` jika di perlukan, dan jalankan servernya
+
 
 ## Skema Database
-Rencana mau buat 1 tabel saja, tetapi saya ingin mengimplementasikan relasi yang ada di mysql ke mongoDB. Mysql menggunakan 2 tabel, Di mongoDB konsep relasi ada 2 yaitu metode embeded document, artinya bisa object di dalam object, kasus ini array of object karena ingin membuat gambar yang banyak atau relasi 1 to many. Serta membuat 1 tabel dengan metode reference atau relasi sebenarnya, ingat metode ini tidak terlalu di sarankan karena akan memperberat query karena saat memanggil setiap lopping data 1 produk akan akan query ke collection kategori.
+Rencana mau buat 1 tabel saja, tetapi saya ingin mengimplementasikan relasi yang ada di mysql ke mongoDB. Mysql menggunakan 2 tabel, Di mongoDB konsep relasi ada 2 yaitu metode embeded document, artinya bisa object di dalam object, kasus ini array of object karena ingin membuat gambar yang banyak atau relasi 1 to many. Serta membuat 2 tabel dengan metode reference atau relasi sebenarnya, ingat metode ini tidak terlalu di sarankan karena akan memperberat query karena saat memanggil setiap lopping data 1 produk akan akan query ke collection lainnya.
 
 ### Berikut Skemanya
 ```javascript
